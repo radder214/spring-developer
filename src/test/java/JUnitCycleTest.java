@@ -1,5 +1,22 @@
 import org.junit.jupiter.api.*;
 
+/**
+ * 콘솔창에는 아래와 같이 찍힌다.
+ *
+ * @BeforeAll
+ * @BeforeEach
+ * test1
+ * @AfterEach
+ * @BeforeEach
+ * test2
+ * @AfterEach
+ * @BeforeEach
+ * test3
+ * @AfterEach
+ * @AfterAll
+ *
+ * */
+
 public class JUnitCycleTest {
     // 전체 테스트를 시작하기 전에 1회 실행하므로 method 를 static 으로 선언
     @BeforeAll
