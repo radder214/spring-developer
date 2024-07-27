@@ -18,3 +18,13 @@ public class TextBlock {
         System.out.println(sql2);
     }
 }
+/* 아래와 같이 출력
+============ sql1 ============
+SELECT * FROM ITEMS
+WHERE STSTUS = ON_SALE
+ORDER BY PRICE;
+============ sql2 ============
+SELECT * FROM ITEMS
+WHERE STATUS = ON_SALE
+ORDER BY PRICE;
+*/

@@ -14,3 +14,10 @@ public class Record {
         // 자동으로 parameter 가 private final 로 정의된다.
     }
 }
+/* 아래와 같이 출력
+item.name : juice
+item.name() : juice
+==========================
+item.price : 3000
+item.price() : 3000
+*/
