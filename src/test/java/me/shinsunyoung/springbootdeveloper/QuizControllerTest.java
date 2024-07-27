@@ -71,6 +71,41 @@ class QuizControllerTest {
     }
 
     // 문제2. POST 요청을 보내 응답 코드마다 예상하는 응답을 반환하는지 검증
+    @DisplayName("quiz() : POST /quiz?code=1 이면 응답 코드는 403, 응답 본문은 Forbidden! 를 반환한다.")
+    @Test
+    public void postQuiz1() throws Exception {
+        // given(검증 코드)
+        final String url = "/quiz";
 
+        // when(실행 코드)
+        ResultActions resultActions = mockMvc.perform(
+                post(url)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(new Code(1)))
+        );
 
+        // then(검증 코드)
+        resultActions
+                .andExpect(status().isForbidden())
+                .andExpect(content().string("Forbidden!"));
+    }
+
+    @DisplayName("quiz() : POST /quiz?code=13 이면 응답 코드는 200, 응답 본문은 OK! 를 반환한다.")
+    @Test
+    public void postQuiz2() throws Exception {
+        // given(검증 코드)
+        final String url = "/quiz";
+
+        // when(실행 코드)
+        ResultActions resultActions = mockMvc.perform(
+                post(url)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(new Code(13)))
+        );
+
+        // then(검증 코드)
+        resultActions
+                .andExpect(status().isOk())
+                .andExpect(content().string("OK!"));
+    }
 }
