@@ -9,6 +9,7 @@ public class Record {
         System.out.println("item.price : " + item.price);
         System.out.println("item.price() : " + item.price());
         System.out.println("==========================");
+        System.out.println("Item.test : " + Item.test);
         System.out.println("item.test : " + item.test);
         System.out.println("item.test : " + item.getTest());
 
