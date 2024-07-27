@@ -52,10 +52,9 @@ class TestControllerTest {
 
         // then - 테스트 결과를 검증하는 단계
         // 응답 코드가 200(OK) && 반환받은 값 중 0번째 요소의 id와 name이 저장된 값과 같은지 확인
-        result.andExpect(status().isOk())
-              // 응답의 0번째 값이 DB에 저장된 값과 같은지 확인
-              .andExpect(jsonPath("$[0].id").value(savedMember.getId()))
-              .andExpect(jsonPath("$[0].name").value(savedMember.getName()));
+        result.andExpect( status().isOk() )                                             // 응답 코드가 OK(200)인지 확인
+              .andExpect( jsonPath("$[0].id").value(savedMember.getId()) )     // 응답의 0번째 값이 DB에 저장된 값과 같은지 확인
+              .andExpect( jsonPath("$[0].name").value(savedMember.getName()) );
     }
 
     @AfterEach  // '매' 테스트 실행 '후' 실행하는 method

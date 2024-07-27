@@ -12,7 +12,7 @@ public class QuizController {
                 return ResponseEntity.created(null).body("Created");
             case 2 :
                 return ResponseEntity.badRequest().body("Bad Request!");
-            default: :
+            default:
                 return ResponseEntity.ok().body("OK!");
         }
     }
