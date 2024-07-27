@@ -12,3 +12,9 @@ public class Formatted_method {
         System.out.println(textBlock.formatted(2, "juice"));
     }
 }
+/* 아래와 같이 출력
+    {
+        "id" : 2,
+        "name" : juice
+    }
+*/
