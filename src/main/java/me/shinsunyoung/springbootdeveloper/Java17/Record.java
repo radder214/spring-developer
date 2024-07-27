@@ -10,8 +10,11 @@ public class Record {
         System.out.println("item.price() : " + item.price());
 
     }
+
+    // record 생성
     record Item(String name, int price) {
         // 자동으로 parameter 가 private final 로 정의된다.
+        // getter 를 자동으로 만들기 때문에 annotation 이나 method 로 getter 를 따로 정의하지 않아도 된다.
     }
 }
 /* 아래와 같이 출력
