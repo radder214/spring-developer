@@ -87,4 +87,24 @@ class QuizController2Test {
                 .andExpect(status().isForbidden())
                 .andExpect(content().string("Forbidden!"));
     }
+
+    @DisplayName("quiz() : POST /quiz?code=13 이면 응답 코드는 200, 응답 본문은 OK! 를 반환한다.")
+    @Test
+    public void postTestCode13() throws Exception {
+        // given
+        final String url = "/quiz";
+
+        // when
+        ResultActions resultActions = mockMvc
+                .perform(
+                        post(url)
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .content(objectMapper.writeValueAsString(new Codes(13)))
+                );
+
+        // then
+        resultActions
+                .andExpect(status().isOk())
+                .andExpect(content().string("OK!"));
+    }
 }
