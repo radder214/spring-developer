@@ -106,7 +106,7 @@ class QuizController2Test {
         ResultActions resultActions = mockMvc
                 .perform(
                         post(url)
-                                .contentType(MediaType.APPLICATION_JSON)
+                                .contentType(MediaType.APPLICATION_JSON) // Set the 'Content-Type' header of the REQUEST.
                                 .content(objectMapper.writeValueAsString(new Codes(13)))
                 );
 
