@@ -81,7 +81,14 @@ class QuizController2Test {
                         post(url)
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content(objectMapper.writeValueAsString(new Codes(1)))
-                                // objectMapper.writeValueAsString --> Java 객체를 JSON 형태의 문자열로 변환
+                        /**
+                         * objectMapper.writeValueAsString --> Java 객체를 JSON 형태의 문자열로 변환
+                         * objectMapper.writeValueAsString --> {'value' : 13}
+                         *
+                         * new Codes(1)
+                         * ㄴCodes 라는 class 를 따로 만들지는 않고 record 를 사용했다.
+                         * ㄴrecord Codes(int value) {};
+                         */
                 );
         // then
         resultActions
