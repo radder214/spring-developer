@@ -81,6 +81,7 @@ class QuizController2Test {
                         post(url)
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content(objectMapper.writeValueAsString(new Codes(1)))
+                                // objectMapper.writeValueAsString --> Java 객체를 JSON 형태의 문자열로 변환
                 );
         // then
         resultActions
